@@ -14,7 +14,8 @@ public class MyRunnable implements Runnable{
 	public void run() {
 		
 		try {
-			cont.modifyResource(this.data);
+			//cont.modifyResourceByLock(this.data);
+			cont.modifyResourceByLockWithTimeout(this.data);
 		} catch (InterruptedException e) {
 			System.out.println(Thread.currentThread().getName() + " was interrupted !");
 		}
