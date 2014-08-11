@@ -28,7 +28,6 @@ public class Controller {
 		
 		countToHundred();
 		
-		System.out.println(Thread.currentThread().getName() + " released lock");
 	}
 
 	private void countToHundred() {
@@ -37,6 +36,8 @@ public class Controller {
 		}
 		
 		System.out.println(Thread.currentThread().getName() + " finished executing critical section");
+	
+		System.out.println(Thread.currentThread().getName() + " released lock");
 		
 		// we can release lock in another method
 		lock.unlock();
@@ -66,6 +67,5 @@ public class Controller {
 	public Resource getRes() {
 		return res;
 	}
-	
-	
+
 }
