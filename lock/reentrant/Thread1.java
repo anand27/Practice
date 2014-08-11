@@ -17,6 +17,7 @@ public class Thread1 {
 		Thread t4 = new Thread(r4, "thread 4");
 		
 		//fairness policy
+		
 		t1.start();
 		t2.start();
 		t3.start();
