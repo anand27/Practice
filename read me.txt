@@ -1,0 +1,111 @@
+-----------------------------------------------------------------
+
+callable vs runnable
+
+- exception can be thrown
+- result can be returned
+-----------------------------------------------------------------
+
+semaphore(mutex/binary/counting) vs monitor(synchronized keyword)
+
+- semaphore allows n threads to access a shared object
+- Semaphore is signaling mechanism
+- works on permits
+- a bike hire place
+- n threads m permits
+
+- monitors allow mutex of shared object
+- a mutex is locking mechanism 
+- works on locks
+- a public toilet
+- n threads 1 lock
+-----------------------------------------------------------------
+
+volatile
+
+- threads avoid-waiting for the completion of the critical section
+  so that they can read the UPDATED value of resource from memory 
+- all threads share the resource(primitive/object)
+- concurrenthashmap class (parallel reads while write)
+- atomic classes
+-----------------------------------------------------------------
+
+Atomic
+
+- for atomic operations 
+- read, update, write operations
+- implemented with comapre and set processor level locks
+- atomic reference ? 
+-----------------------------------------------------------------
+
+composition vs aggregation
+-----------------------------------------------------------------
+
+Thread Synchronizers
+
+- Executors
+- Cyclic Barriers
+- Count down latches
+- Exchangers
+- Monitors
+- Reentrant locks
+
+synchronization machanism
+
+- synchronized keyword
+
+ordering mechanism
+
+- additional data / objects
+
+monitor concept
+
+- wait() , notify(), notifyAll()
+-----------------------------------------------------------------
+
+kill a thread
+
+- intercept a thread
+- t.stop() // depricated -> why ? 
+- use Future class to get status of thread
+-----------------------------------------------------------------
+
+how to identitfy a deadlock and resolve it 
+
+-----------------------------------------------------------------
+
+Synch block vs synch instance method
+
+- synch method makes performance slow
+- synch block makes performance fast as they lock only few lines
+
+- hashtable -> synch methods
+- singleton double check locking
+
+- multiple threads cannot act on more than 1 synch method at the same time
+- multiple threads cannot act on more than 1 synch block at the same time ?
+
+- synch method by default takes lock on object
+- synch block takes lock on anything (can be any object / this / class)
+
+-----------------------------------------------------------------
+
+stack vs heap
+
+local variables / references / declarations are on stack
+instance members / refernces and objects created are on heaps
+-----------------------------------------------------------------
+
+local variables of a method are thread safe
+final and static variables are thread safe ? 
+-----------------------------------------------------------------
+
+sleep() vs wait()
+
+- wait asks the monitor of the object to release the lock on the object
+- sleep makes the current thread to leave the processor but holds thelock on the object
+-----------------------------------------------------------------
+
+classloader in java ? 
+static keyword ? 
+-----------------------------------------------------------------
