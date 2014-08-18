@@ -1,4 +1,11 @@
 -----------------------------------------------------------------
+Reentrant locks vs monitors
+
+- threads do not goto waiting state / return with false if they do not get lock
+- threads can wait for a timeout period unlike monitors
+- span to more than one methods
+- have fairness policy / wait in order in which they arrived for lock
+-----------------------------------------------------------------
 
 callable vs runnable
 
@@ -12,16 +19,25 @@ semaphore(mutex/binary/counting) vs monitor(synchronized keyword)
 - semaphore signals for threads & monitor releases locks for threads
 
 - semaphore allows n threads to access a shared object
-- Semaphore is signaling mechanism
+- Semaphore is signaling mechanism (one thread does some work then calls acquire(), other thread calls release() then does some work)
 - works on permits
 - a bike hire place
 - n threads m permits
+- fairness of the threads acquiring permits
+- using a semaphore you can avoid missed signals.
+(if no thread waits and some other thread calls acquire() and goes away, 
+then the thread which has come to call release() now, will see a signal to be true and won't wait(),
+it will know that someone has modified the signal variable before it)
 
 - monitors allow mutex of shared object
-- a mutex is locking mechanism 
+- a mutex is locking mechanism (one thread leaves monitor & notifies other threads that are waiting, other threads wait for the monitor)
 - works on locks
 - a public toilet
 - n threads 1 lock
+- no fairness
+- a thread can miss a signal / turn 
+(if no thread waits and some other thread calls notify() and goes away, 
+then the thread which has come to wait() now, HAS actually missed a notify signal) 
 -----------------------------------------------------------------
 
 volatile
@@ -112,4 +128,11 @@ sleep() vs wait() vs yield()
 
 classloader in java ? 
 static keyword ? 
+-----------------------------------------------------------------
+
+Producer consumer implementation ways
+
+- monitors (synchronized, wait, notify)
+- semaphores (aquire after insertion in shared list, release before taking from a shared list, n permits for n elements)
+- blocking queue
 -----------------------------------------------------------------
