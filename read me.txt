@@ -8,6 +8,9 @@ callable vs runnable
 
 semaphore(mutex/binary/counting) vs monitor(synchronized keyword)
 
+- both guard the critical section 
+- semaphore signals for threads & monitor releases locks for threads
+
 - semaphore allows n threads to access a shared object
 - Semaphore is signaling mechanism
 - works on permits
