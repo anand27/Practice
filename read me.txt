@@ -25,9 +25,9 @@ semaphore(mutex/binary/counting) vs monitor(synchronized keyword)
 - n threads m permits
 - fairness of the threads acquiring permits
 - using a semaphore you can avoid missed signals.
-(if no thread waits and some other thread calls acquire() and goes away, 
-then the thread which has come to call release() now, will see a signal to be true and won't wait(),
-it will know that someone has modified the signal variable before it)
+(if no thread waits and some other thread calls release() and goes away (1 permit is allowed to be taken), 
+then the thread which has come to call acquire() now, will see 1 permit available and won't wait(),
+it will know that someone has modified the permit before it)
 
 - monitors allow mutex of shared object
 - a mutex is locking mechanism (one thread leaves monitor & notifies other threads that are waiting, other threads wait for the monitor)
