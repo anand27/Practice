@@ -2,8 +2,8 @@
 
 callable vs runnable
 
-- exception can be thrown
-- result can be returned
+- exception can be thrown in call()
+- result can be returned from call()
 -----------------------------------------------------------------
 
 semaphore(mutex/binary/counting) vs monitor(synchronized keyword)
@@ -37,7 +37,7 @@ Atomic
 
 - for atomic operations 
 - read, update, write operations
-- implemented with comapre and set processor level locks
+- implemented with compare and set processor level locks
 - atomic reference ? 
 -----------------------------------------------------------------
 
@@ -51,15 +51,16 @@ Thread Synchronizers
 - Count down latches
 - Exchangers
 - Monitors
+- Semaphores
 - Reentrant locks
 
-synchronization machanism
+synchronization mechanism
 
 - synchronized keyword
 
 ordering mechanism
 
-- additional data / objects
+- additional constructs / data / objects
 
 monitor concept
 
@@ -73,7 +74,7 @@ kill a thread
 - use Future class to get status of thread
 -----------------------------------------------------------------
 
-how to identitfy a deadlock and resolve it 
+how to identify a deadlock and resolve it 
 
 -----------------------------------------------------------------
 
@@ -96,17 +97,17 @@ Synch block vs synch instance method
 stack vs heap
 
 local variables / references / declarations are on stack
-instance members / refernces and objects created are on heaps
+instance members / references and objects created are on heaps
 -----------------------------------------------------------------
 
 local variables of a method are thread safe
 final and static variables are thread safe ? 
 -----------------------------------------------------------------
 
-sleep() vs wait()
+sleep() vs wait() vs yield()
 
 - wait asks the monitor of the object to release the lock on the object
-- sleep makes the current thread to leave the processor but holds thelock on the object
+- sleep makes the current thread to leave the processor but holds the lock on the object
 -----------------------------------------------------------------
 
 classloader in java ? 
